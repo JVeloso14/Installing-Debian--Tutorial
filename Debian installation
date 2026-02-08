@@ -1,0 +1,43 @@
+## Debian installation Steps
+
+1. Power on the machine and press **F10** or **F12** to enter the BIOS.
+2. Select the USB boot device.
+3. Choose **Install** (non-graphical mode).
+4. Select the installation language: **English**.
+5. Select **Other → South America → Brazil**. (your own country)
+6. Select **United States** (to define decimal separator as dot).
+7. Set the keyboard layout to **Brazilian**.
+8. Make sure the system is connected to the internet.
+9. Define the system **hostname** (e.g., `test`).
+10. Define the cluster **domain name** (e.g., `tutorial`).
+11. Set the password.  
+    - Full name of the user can be set as `tutorial`, for example.
+12. Configure the time zone: **São Paulo**.  
+    - Both machines must have the same time zone.
+13. Choose partitioning method:  
+    **Guided – use entire disk with LVM (Logical Volume Management)**.
+14. Select the hard drive.
+15. Choose partition scheme: **Separate /home**.
+16. Confirm settings by selecting **[Yes]**.
+17. Assign storage usage percentage for LVM (select **all available space**).
+18. Confirm formatting of old partitions (**Yes**).
+19. Choose the nearest mirror for package download and updates.
+20. Skip proxy configuration (not used in this setup).
+21. Decide on participation in anonymous usage statistics (optional):  
+    `dpkg-reconfigure popularity-contest`.
+22. In **Software selection**, choose only:
+    - **SSH server**
+    - **Standard system utilities**
+23. Install **GRUB bootloader** (critical step).  
+    - Select the correct hard drive.
+24. Remove the USB drive and reboot the system.  
+    The installation is now complete!
+
+---
+
+## Final Step
+
+To shut down the machine safely, run:
+
+```bash
+systemctl poweroff
